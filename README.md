@@ -49,6 +49,9 @@ Add the variables to your system, run the application and call using cURL.
 
 ``
 curl -X GET -H "Content-Type: application/json" -d '{"uri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWbQ-e7P8B1cS_96Emg2odA0pHe3lAD1LeNA&s"}' http://localhost:3000/api/v1/analysis/
+``
+
+``
 {
   "text": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness ..."
 }
