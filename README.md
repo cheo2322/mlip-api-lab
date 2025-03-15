@@ -44,15 +44,27 @@ Optionally extend the API or document it with [Swagger](https://swagger.io).
 - [API Endpoint Best Practices](https://www.telerik.com/blogs/7-tips-building-good-web-api)
 - The file seai-azure-cv-ocr-api.json has the structure to test calls to the Azure Vision API with Postman.
 
-# Notes:
-Add the variables to your system, run the application and call using cURL.
+# Notes for Production Deployment class:
+Please check the commits made specifically for this class.
 
-``
+Steps to deploy:
+
+- Set the `AZURE_ENDPOINT` and `AZURE_KEY` variables in the system. Otherwise, the app will fail
+- Install the requirements from `requirements.txt` file
+- Run the `app.py` file via Terminal or Using the Visual Studio Code debugger
+```bash
+python3 app.py
+```
+![running the app](1.PNG)
+
+- Call the endpoint `/api/v1/analysis/` via cURL from a different terminal. Change the `uri` in order to get results from other images. Please take care with the port in which your local is running the API
+```bash
 curl -X GET -H "Content-Type: application/json" -d '{"uri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWbQ-e7P8B1cS_96Emg2odA0pHe3lAD1LeNA&s"}' http://localhost:3000/api/v1/analysis/
-``
-
-``
+```
+Result:
+```bash
 {
   "text": "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness ..."
 }
-``
+```
+![test the app](2.PNG)
